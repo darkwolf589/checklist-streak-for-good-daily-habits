@@ -21,12 +21,16 @@
 
 <div id="streak">Streak: 0</div>
 
+<button id="counterBtn">Zähler: 0</button>
+
 <script>
 const form = document.querySelector('#checklistForm');
 const streakDisplay = document.querySelector('#streak');
+const counterBtn = document.querySelector('#counterBtn');
 const checkboxes = document.querySelectorAll('[type="checkbox"]');
 
 let streak = 0;
+let counter = 0;
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -46,6 +50,11 @@ form.addEventListener('submit', (e) => {
     checkboxes.forEach(item => {
         item.checked = false;
     });
+});
+
+counterBtn.addEventListener('click', () => {
+    counter++;
+    counterBtn.textContent = 'Zähler: ' + counter;
 });
 </script>
 
